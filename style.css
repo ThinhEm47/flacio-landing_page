@@ -1,0 +1,788 @@
+@import url("https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Teko:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img {
+    display: block;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+ul {
+    list-style: none;
+}
+input,
+button {
+    font-family: inherit;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    --primari-clor: #216d00;
+}
+input:focus {
+    outline: none;
+    border-color: #08c1b8;
+}
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+.button {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border: 1px solid #bdb9b9;
+    font-weight: 350;
+}
+.button::before {
+    content: "";
+    position: absolute;
+    display: block;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--primari-clor);
+    transition: 0.5s;
+}
+.button:hover::before {
+    width: 100%;
+    transition: 0.5s;
+}
+.button:hover {
+    color: #fff;
+    transition: 0.5s;
+}
+/* var(--primari-clor) */
+/* BEGIN CSS HEADER */
+.header {
+    display: flex;
+    align-items: center;
+}
+.header .logo img {
+    width: 100px;
+}
+.header .menu > ul > li {
+    position: relative;
+    display: inline-block;
+    margin-left: 45px;
+}
+.header .menu > ul > li:hover > ul {
+    top: 100%;
+    opacity: 1;
+    z-index: 2;
+    pointer-events: all;
+    transition: 0.5s;
+    pointer-events: visible;
+}
+.header .menu > ul > li:hover > a {
+    color: var(--primari-clor);
+    transition: 0.5s;
+}
+.header .menu > ul > li > ul {
+    position: absolute;
+    top: 130%;
+    left: 0;
+    width: 200px;
+    padding: 5px 20px;
+    opacity: 0;
+    background-color: #fff;
+    pointer-events: none;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.header .menu > ul > li > ul > li {
+    margin: 15px 0;
+}
+.header .menu > ul > li > ul > li a {
+    transition: 0.5s;
+}
+.header .menu > ul > li > ul > li:hover > a {
+    padding-left: 10px;
+    color: var(--primari-clor);
+}
+.header .menu > ul > li > a {
+    line-height: 80px;
+}
+.header .icon {
+    position: relative;
+    margin-left: auto;
+}
+.header .icon a i {
+    margin-left: 15px;
+    transition: 1s;
+    font-size: 17px;
+}
+.header .icon a:hover i {
+    transform: translateY(-10px);
+    color: var(--primari-clor);
+    transition: 1s;
+}
+.header .bars {
+    display: none;
+}
+
+/* END CSS HEADER */
+/* BEGIN RESPONSIVE HEADER */
+/* END RESPONSIVE HEADER */
+/* BEGIN CSS BANNER */
+.banner {
+    position: relative;
+}
+.banner .banner-content {
+    position: absolute;
+    top: 0;
+    text-align: center;
+    left: 9%;
+    transform: translateY(50%);
+    animation: banner 1s;
+    width: 35%;
+}
+.banner .banner-content p {
+    font-size: 25px;
+    font-weight: 300;
+    animation: sale 1s;
+}
+.banner .banner-content h2 {
+    font-size: 65px;
+    font-weight: 500;
+}
+.banner .banner-content h2 span {
+    color: var(--primari-clor);
+}
+.banner .banner-content .button {
+    animation: banner 3s;
+    transform: translateY(50%);
+    margin-top: 0;
+}
+
+@keyframes sale {
+    from {
+        transform: rotate(180deg);
+    }
+    to {
+        transform: rotate(0);
+    }
+}
+@keyframes banner {
+    from {
+        opacity: 0;
+        transform: translateY(80%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(50%);
+    }
+}
+
+/* END CSS BANNER */
+/* BEGIN CSS CATE */
+.cate {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    margin: 30px 0;
+}
+.cate .item {
+    width: 16.66%;
+    padding: 0px 30px;
+    cursor: pointer;
+}
+.cate .item img {
+    border-radius: 50%;
+    transition: 0.5s;
+}
+.cate .item h3 {
+    display: inline-block;
+    font-weight: 300;
+    margin-top: 15px;
+}
+.cate .item h3::after {
+    content: "";
+    display: block;
+    width: 0;
+    margin-top: 5px;
+    height: 2.5px;
+    background-color: var(--primari-clor);
+    transition: 0.5s;
+}
+.cate .item:hover h3::after {
+    width: 100%;
+    transition: 0.5;
+}
+.cate .item:hover img {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+/* END CSS CATE */
+/* BEGEN CSS PRODUCT */
+.product {
+    margin: 80px 0;
+}
+.product-content {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+}
+.title {
+    font-size: 35px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+.text {
+    opacity: 0.75;
+}
+.product .list-card {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.product .list-card .card {
+    width: calc(25% - 40px);
+    cursor: pointer;
+}
+.product .list-card .card .thumb {
+    position: relative;
+    overflow: hidden;
+}
+.product .list-card .card .sale {
+    position: absolute;
+    padding: 10px 15px;
+    color: #fff;
+    background-color: var(--primari-clor);
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+}
+.product .list-card .card .thumb::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+    background-color: #fcfafa65;
+    transition: 0.5s;
+}
+.product .list-card .card:hover .thumb::after {
+    top: 0;
+    transition: 0.5s;
+}
+.product .list-card .card:hover > h3 {
+    color: var(--primari-clor);
+    transition: 0.5s;
+}
+.product .list-card .card > h3 {
+    font-weight: 500;
+}
+.product .list-card .card .price {
+    margin-top: 10px;
+    color: #ff005a;
+}
+.product .list-card .card .price span {
+    text-decoration: line-through;
+    color: #bdb9b9;
+}
+/* END CSS PRODUCT */
+/* BEGIN CSS DISCOVER */
+.discover {
+    background-image: url("img-page/banner-2.jpg");
+    background-size: cover;
+    padding: 60px 0px;
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+.discover::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.discover .discover-hover .extend {
+    display: inline-flex;
+    position: relative;
+    z-index: 2;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    color: #000;
+    border-radius: 50%;
+}
+.discover .discover-hover .extend::before {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid #d1c9c9ce;
+    animation: extend 1s infinite alternate;
+}
+@keyframes extend {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+}
+.discover .discover-hover {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+.discover .discover-hover .card {
+    position: absolute;
+    width: 170px;
+    color: #000;
+    z-index: 3;
+    opacity: 0;
+    pointer-events: none;
+    top: -10px;
+    left: 120%;
+    padding: 10px;
+    background-color: #fff;
+    transition: 0.5s;
+}
+.discover .discover-hover:hover .card {
+    opacity: 1;
+    transition: 0.5s;
+    pointer-events: visible;
+}
+.discover .discover-content {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    z-index: 2;
+}
+.discover .discover-content > a {
+    color: #fff;
+}
+/* END CSS DISCOVER */
+/* BEGIN CSS SERVICE */
+.service {
+    display: flex;
+    margin: 40px 0;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.service .service-card {
+    position: relative;
+    width: calc(33.333% - 30px);
+}
+.service .service-card > h2 {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    padding: 10px 0;
+    display: block;
+    background-color: #fff;
+    text-align: center;
+    font-weight: 500;
+    transition: 0.5s;
+}
+.service .service-card:hover > h2 {
+    background-color: var(--primari-clor);
+    color: #fff;
+    top: 83%;
+    transition: 0.5s;
+}
+/* END CSS SERVICE */
+/* BEGIN CSS FEEDBACK */
+.feedback {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 90px 0;
+}
+.feedback .feedback-right {
+    width: 50%;
+    position: relative;
+}
+.feedback .feedback-right img:last-child {
+    position: absolute;
+    width: 120px;
+    top: -35px;
+    left: 55px;
+    animation: rorate 7s linear infinite;
+}
+@keyframes rorate {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.feedback .feedback-left {
+    width: 50%;
+    text-align: center;
+    padding-left: 50px;
+}
+.feedback > .feedback-left > i {
+    color: var(--primari-clor);
+    font-size: 60px;
+}
+.feedback .feedback-left .star i {
+    color: #ffc200;
+    margin: 20px 0;
+}
+.feedback .feedback-left .star i:last-child {
+    color: #d7d7d7;
+}
+.feedback .feedback-left > p {
+    font-size: 30px;
+    margin: 10px 0;
+    font-weight: 400;
+}
+.feedback .feedback-left > h3 {
+    font-size: 20px;
+    font-weight: 550;
+}
+/* END CSS FEEDBACK */
+/* BEGIN CSS GALLERY */
+.gallery {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.gallery .gallery-hover {
+    position: relative;
+    display: block;
+}
+.gallery .gallery-hover .social {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 30px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: #0000007b;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gallery .gallery-hover:hover .social {
+    opacity: 1;
+    transition: 0.5s;
+}
+.gallery .gallery-right {
+    width: 49%;
+}
+.gallery .gallery-left {
+    width: calc(51% - 30px);
+}
+.gallery .gallery-left .gallery-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+}
+.gallery .gallery-left .gallery-list .gallery-hover {
+    width: calc(50% - 15px);
+}
+/* END CSS GALLERY */
+/* BEGIN CSS HEADER */
+.footer {
+    margin-top: 60px;
+    padding-top: 70px;
+    border-top: 1px solid #dfd9d9e7;
+}
+.footer .footer-top {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    margin-bottom: 70px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer .footer-top .footer-logo {
+    width: 15%;
+}
+.footer .footer-top .creative {
+    width: 37%;
+    padding: 0 50px;
+
+    border-left: 1px solid #dfd9d9e7;
+    border-right: 1px solid #dfd9d9e7;
+}
+.footer .footer-top .creative h3 {
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+.footer .footer-top .creative p {
+    font-weight: 350;
+}
+.footer .footer-top .contact {
+    text-align: right;
+}
+.footer .footer-top .contact ul {
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    display: flex;
+}
+.footer .footer-top .contact ul li {
+    margin-left: 10px;
+}
+.footer .footer-top .contact ul li a {
+    display: block;
+    color: var(--primari-clor);
+    background-color: #f6f6f6;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    line-height: 44px;
+    text-align: center;
+    font-size: 16px;
+    transition: 0.5s;
+}
+.footer .footer-top .contact ul li:hover a {
+    background-color: var(--primari-clor);
+    color: #fff;
+    transition: 0.5s;
+}
+.footer .footer-top .contact .email input {
+    width: 100%;
+    height: 50px;
+    padding: 5px 15px;
+    font-size: 15px;
+    border: 1px solid #dfd9d9e7;
+    background-color: #ffffff;
+    color: #ccc;
+    padding-right: 50px;
+    outline: none;
+}
+.footer .footer-top .contact .email input:focus {
+    border-color: #08c1b8;
+}
+.footer .footer-top .contact .email {
+    position: relative;
+}
+.footer .footer-top .contact .email i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+}
+.footer .footer-bottom {
+    background-color: #f5f5f5;
+    padding: 15px 0;
+    color: #8f918f;
+}
+.footer .footer-bottom .nav {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer .footer-bottom .nav ul li {
+    display: inline-block;
+    margin-left: 15px;
+}
+.footer .footer-bottom .nav ul li a {
+    color: #8f918f;
+    transition: 0.5s;
+}
+.footer .footer-bottom .nav ul li:hover a {
+    color: var(--primari-clor);
+    transition: 0.5s;
+}
+/* END CSS HEADER */
+@media (max-width: 1212px) {
+    .banner .banner-content p {
+        font-size: 15px;
+    }
+    .banner .banner-content h2 {
+        font-size: 40px;
+    }
+    .cate .item {
+        width: 33.333%;
+    }
+}
+@media (max-width: 996px) {
+    .menu {
+        display: none;
+    }
+    .header {
+        padding: 10px 0;
+    }
+    .header .bars {
+        display: block;
+        margin-left: 40px;
+    }
+    .container {
+        width: 95%;
+    }
+    .product .list-card .card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 770px) {
+    .banner .banner-content p {
+        font-size: 10px;
+    }
+    .banner .banner-content h2 {
+        font-size: 25px;
+    }
+
+    .button {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+    .cate .item {
+        width: 50%;
+    }
+    .service .service-card {
+        width: 100%;
+    }
+    .feedback .feedback-right {
+        width: 100%;
+    }
+    .feedback .feedback-left {
+        width: 100%;
+        padding-left: 0;
+    }
+    .gallery .gallery-right {
+        width: 100%;
+    }
+    .gallery .gallery-left {
+        width: 100%;
+    }
+    .footer .footer-top .footer-logo {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 25px;
+    }
+    .footer .footer-top .footer-logo img {
+        width: 100px;
+    }
+    .footer .footer-top .creative {
+        width: 100%;
+        text-align: center;
+        border: none;
+        margin-bottom: 10px;
+    }
+    .footer .footer-top .contact {
+        width: 100%;
+    }
+    .footer .footer-bottom .nav {
+        justify-content: center;
+    }
+    .footer .footer-top .contact ul {
+        justify-content: center;
+    }
+    .footer .footer-top {
+        margin-bottom: 20px;
+    }
+    .footer .footer-top .creative {
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 500px) {
+    .banner .banner-content {
+        display: none;
+    }
+    .title {
+        font-size: 20px;
+    }
+    .text {
+        font-size: 12px;
+    }
+    .cate .item {
+        padding: 0 20px;
+    }
+    .product .list-card .card {
+        width: calc(50% - 20px);
+    }
+    .product .list-card .card {
+        width: 100%;
+    }
+    .product-content {
+        margin: 0 auto;
+    }
+    .discover .discover-content {
+        width: 80%;
+    }
+    .gallery {
+        gap: 15px;
+    }
+    .gallery .gallery-left .gallery-list {
+        gap: 15px;
+    }
+    .gallery .gallery-left .gallery-list .gallery-hover {
+        width: calc(50% - 8px);
+    }
+    .footer {
+        margin-top: 30px;
+        padding-top: 20px;
+    }
+    .footer .footer-bottom .nav p {
+        width: 100%;
+        text-align: center;
+    }
+    .footer .footer-bottom .nav ul {
+        width: 100%;
+        text-align: center;
+    }
+    .footer .footer-bottom .nav {
+        width: 99%;
+        text-align: center;
+    }
+    .feedback .feedback-left > p {
+        font-size: 20px;
+    }
+    .footer .footer-bottom .nav ul li {
+        margin-left: 5px;
+    }
+    .footer .footer-top .creative {
+        padding: 5px;
+    }
+}
+@media (max-width: 400px) {
+    .cate .item {
+        padding: 0 12px;
+    }
+    .product-content {
+        margin: 0 auto;
+    }
+    .discover .discover-hover .card {
+        width: 125px;
+        padding: 5px;
+    }
+}
